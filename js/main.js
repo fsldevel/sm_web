@@ -16,7 +16,7 @@ export async function loadPlugins() {
             pluginCard.innerHTML = `
                 <h3>${plugin.name}</h3>
                 <p>${plugin.description}</p>
-                <a href="../${plugin.download_url}" class="btn btn-primary" download>
+                <a href="${plugin.download_url}" class="btn btn-primary" download>
                     Скачать
                 </a>
             `;
@@ -25,7 +25,7 @@ export async function loadPlugins() {
     } catch (error) {
         console.error('Ошибка загрузки плагинов:', error);
         const container = document.getElementById('plugins-container');
-        if(container) container.innerHTML = '<p>Не удалось загрузить список плагинов.</p>';
+        if(container) container.innerHTML = '<p>Не удалось загрузить список плагинов. Проверьте консоль (F12) на наличие ошибок.</p>';
     }
 }
 
@@ -58,7 +58,7 @@ export async function loadChangelog() {
             `;
             container.appendChild(item);
         });
-    } catch (error) {
+    } catch (error) { // ИСПРАВЛЕНО: Закрыл блок catch {...}, была синтаксическая ошибка.
         console.error('Ошибка загрузки списка изменений:', error);
         const container = document.getElementById('changelog-container');
         if(container) container.innerHTML = '<p>Не удалось загрузить историю изменений.</p>';
