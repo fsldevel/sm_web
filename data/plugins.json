@@ -13,5 +13,10 @@
         "name": "Visual Plugin",
         "description": "Показывает компактные и стильные всплывающие уведомления поверх всех окон (работает в играх).",
         "download_url": "plugins_data/visual_plugin.zip"
+    },
+    {
+        "name": "Test",
+        "description": "Test",
+        "download_url": "plugins_data/test.py"
     }
 ]
