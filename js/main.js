@@ -1,7 +1,7 @@
 // Функции теперь экспортируются, чтобы router.js мог их вызывать
 export async function loadPlugins() {
     try {
-        const response = await fetch('../data/plugins.json');
+        const response = await fetch('data/plugins.json');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const plugins = await response.json();
         const container = document.getElementById('plugins-container');
@@ -13,6 +13,8 @@ export async function loadPlugins() {
             pluginCard.className = 'plugin-card';
             pluginCard.style.animationDelay = `${index * 0.1}s`;
             
+            // Этот блок кода ищет ключи name, description, и download_url.
+            // Они должны точно совпадать с теми, что в файле plugins.json.
             pluginCard.innerHTML = `
                 <h3>${plugin.name}</h3>
                 <p>${plugin.description}</p>
@@ -31,7 +33,7 @@ export async function loadPlugins() {
 
 export async function loadChangelog() {
     try {
-        const response = await fetch('../data/changelog.json');
+        const response = await fetch('data/changelog.json');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const changelog = await response.json();
         const container = document.getElementById('changelog-container');
@@ -58,7 +60,7 @@ export async function loadChangelog() {
             `;
             container.appendChild(item);
         });
-    } catch (error) { // ИСПРАВЛЕНО: Закрыл блок catch {...}, была синтаксическая ошибка.
+    } catch (error) {
         console.error('Ошибка загрузки списка изменений:', error);
         const container = document.getElementById('changelog-container');
         if(container) container.innerHTML = '<p>Не удалось загрузить историю изменений.</p>';
