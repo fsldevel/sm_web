@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Monitor - Проект от FSL</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+
+    <header>
+        <nav>
+            <a href="/" class="logo-link nav-link">
+                <img src="images/logo.png" alt="Логотип" class="logo">
+                <span>Steam Monitor</span>
+            </a>
+            <ul>
+                <li><a href="/" class="nav-link active">Главная</a></li>
+                <li><a href="/plugins" class="nav-link">Плагины</a></li>
+                <li><a href="/changelog" class="nav-link">Обновления</a></li>
+                <li><a href="/documentation" class="nav-link">Документация</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Весь контент будет загружаться сюда -->
+    <main id="content-container" class="container"></main>
+
+    <footer>
+        <p>Проект создан FSL. Все права защищены, 2024</p>
+    </footer>
+    
+    <!-- Скрипты теперь в конце -->
+    <script src="js/main.js" type="module"></script>
+    <script src="js/router.js" type="module"></script>
+</body>
+</html>
